@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suchismita Samantaray | Talent Acquisition Partner</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+body { background:#0f172a; color:#fff; overflow-x:hidden; }
+
+header {
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);
+}
+
+header h1 { font-size:3rem; }
+header p { margin-top:10px; font-weight:300; }
+
+.btn {
+  margin-top:25px;
+  padding:12px 25px;
+  border:none;
+  background:#fff;
+  color:#6366f1;
+  font-weight:600;
+  cursor:pointer;
+  border-radius:30px;
+  transition:0.3s;
+}
+.btn:hover { background:#0f172a; color:#fff; }
+
+section {
+  padding:80px 10%;
+}
+
+h2 {
+  margin-bottom:30px;
+  font-size:2rem;
+  border-left:5px solid #8b5cf6;
+  padding-left:15px;
+}
+
+.card {
+  background:#1e293b;
+  padding:25px;
+  margin-bottom:20px;
+  border-radius:15px;
+  transition:0.3s;
+}
+.card:hover { transform:translateY(-5px); }
+
+.metrics {
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+}
+.metric {
+  flex:1;
+  min-width:200px;
+  background:#1e293b;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+}
+.metric h3 { font-size:2rem; color:#8b5cf6; }
+
+.timeline {
+  border-left:3px solid #8b5cf6;
+  padding-left:20px;
+}
+.timeline-item {
+  margin-bottom:30px;
+  cursor:pointer;
+}
+.timeline-item h4 { color:#8b5cf6; }
+
+footer {
+  text-align:center;
+  padding:40px;
+  background:#1e293b;
+}
+
+a { color:#8b5cf6; text-decoration:none; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Hi, I'm Suchismita 👋</h1>
+  <p>Talent Acquisition Partner | IT, ERP & Data Hiring Specialist</p>
+  <button class="btn" onclick="scrollToSection()">Explore My Hiring Journey</button>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    Talent Acquisition Partner with 5+ years of experience hiring for global clients like CBA, Ford, PwC & Altimetrik.
+    I specialize in full-cycle IT recruitment, stakeholder management, diversity hiring and workforce strategy.
+  </div>
+</section>
+
+<section>
+  <h2>Impact Metrics</h2>
+  <div class="metrics">
+    <div class="metric">
+      <h3 id="roles">0</h3>
+      Roles Closed
+    </div>
+    <div class="metric">
+      <h3 id="diversity">0</h3>
+      Diversity Hires
+    </div>
+    <div class="metric">
+      <h3 id="ttf">0%</h3>
+      Time-to-Fill Reduction
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Career Timeline</h2>
+  <div class="timeline">
+    <div class="timeline-item" onclick="toggle(this)">
+      <h4>Allegis Global Solutions (2021 – 2025)</h4>
+      <p style="display:none;">
+        Recruitment Relationship Manager handling CBA, Ford, PwC & Altimetrik.
+        Closed 80+ roles, led diversity initiatives, improved hiring efficiency by 20%.
+      </p>
+    </div>
+
+    <div class="timeline-item" onclick="toggle(this)">
+      <h4>Tata Power – HR Trainee</h4>
+      <p style="display:none;">
+        Managed mass hiring drives, campus recruitment & onboarding improvements.
+      </p>
+    </div>
+
+    <div class="timeline-item" onclick="toggle(this)">
+      <h4>Earlier Career – Marketing & Internship</h4>
+      <p style="display:none;">
+        Marketing Executive at R.K. Marbles & Summer Intern at AkzoNobel.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Core Strengths</h2>
+  <div class="card">✔ End-to-End Recruitment</div>
+  <div class="card">✔ Global Stakeholder Management</div>
+  <div class="card">✔ Diversity Hiring & Employer Branding</div>
+  <div class="card">✔ ATS: Workday | Oracle HCM | SAP SuccessFactors</div>
+</section>
+
+<footer>
+  <p>Let's Build Winning Teams Together 🚀</p>
+  <p>Email: suchismitasamantaray1995@gmail.com</p>
+  <p>LinkedIn: linkedin.com/in/suchismita-samantaray</p>
+</footer>
+
+<script>
+function scrollToSection(){
+  document.getElementById("about").scrollIntoView({behavior:"smooth"});
+}
+
+function toggle(element){
+  let p = element.querySelector("p");
+  p.style.display = p.style.display === "none" ? "block" : "none";
+}
+
+function animateValue(id, start, end, duration) {
+  let obj = document.getElementById(id);
+  let range = end - start;
+  let current = start;
+  let increment = end > start ? 1 : -1;
+  let stepTime = Math.abs(Math.floor(duration / range));
+  let timer = setInterval(function() {
+    current += increment;
+    obj.textContent = current;
+    if (current == end) {
+      clearInterval(timer);
+    }
+  }, stepTime);
+}
+
+window.onload = function(){
+  animateValue("roles", 0, 160, 2000);
+  animateValue("diversity", 0, 15, 1500);
+  animateValue("ttf", 0, 20, 2000);
+};
+</script>
+
+</body>
+</html>
